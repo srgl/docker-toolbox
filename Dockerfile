@@ -19,12 +19,6 @@ RUN apt-get update && \
 RUN mkdir -p /opt/local/bin
 
 # Docker client
-RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 > /opt/local/bin/docker-1.9.1 && \
-    chmod +x /opt/local/bin/docker-1.9.1
-
-RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 > /opt/local/bin/docker-1.10.3 && \
-    chmod +x /opt/local/bin/docker-1.10.3
-
 RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz > /tmp/docker-1.12.1.tgz && \
     cd /tmp && tar -xzf ./docker-1.12.1.tgz && \
     rm /tmp/docker-1.12.1.tgz && \
@@ -32,16 +26,10 @@ RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz > /tmp/
     chmod +x /opt/local/bin/docker-1.12.1
 
 # Docker machine
-RUN curl -L https://github.com/docker/machine/releases/download/v0.6.0/docker-machine-`uname -s`-`uname -m` >/opt/local/bin/docker-machine-0.6.0 && \
-    chmod +x /opt/local/bin/docker-machine-0.6.0
-
 RUN curl -L https://github.com/docker/machine/releases/download/v0.8.1/docker-machine-`uname -s`-`uname -m` >/opt/local/bin/docker-machine-0.8.1 && \
     chmod +x /opt/local/bin/docker-machine-0.8.1
 
 # Docker compose
-RUN curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /opt/local/bin/docker-compose-1.6.2 && \
-    chmod +x /opt/local/bin/docker-compose-1.6.2
-
 RUN curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /opt/local/bin/docker-compose-1.7.1 && \
     chmod +x /opt/local/bin/docker-compose-1.7.1
 
